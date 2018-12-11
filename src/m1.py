@@ -340,18 +340,18 @@ def broken_7(n, point, length, distance_between_lines, window):
       :type distance_between_lines: int
       :type window:                 rg.RoseWindow
     """
-    
+
     left = rg.Point(point.x, point.y)
     right = rg.Point(point.x + length, point.y)
 
     for _ in range(n):
         line = rg.Line(left, right)
         line.attach_to(window)
-        window.render(0.5)
+        window.render()
         left = rg.Point(left.x, left.y + distance_between_lines)
         right = rg.Point(right.x, right.y + distance_between_lines)
 
-    window.close_on_mouse_click()
+    # window.close_on_mouse_click()
 
 
 # -----------------------------------------------------------------------------
